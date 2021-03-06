@@ -30,7 +30,7 @@
 (defn home-page []
   (fn []
     [:span.main
-     [:h1 "Termagotchi"]
+     [:h1 "Funky Cat"]
      (game/game state)
      ]))
 
@@ -57,7 +57,7 @@
 
 (defn about-page []
   (fn [] [:span.main
-          [:h1 "About termagotchi-reagent"]]))
+          [:h1 "About funky-cat"]]))
 
 
 ;; -------------------------
@@ -80,7 +80,7 @@
       [:div
        [:header
         [:p [:a {:href (path-for :index)} "Home"] " | "
-         [:a {:href (path-for :about)} "About termagotchi-reagent"]]]
+         [:a {:href (path-for :about)} "About funky-cat"]]]
        [page]
        [:footer]])))
 
