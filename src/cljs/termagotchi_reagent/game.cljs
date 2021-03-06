@@ -7,6 +7,11 @@
    [clerk.core :as clerk]
    [accountant.core :as accountant]))
 
+(defn toggle-state
+  [state]
+  (case @state
+    :normal (reset! state :sad)
+    :sad (reset! state :normal)))
 
 (defn image-src
   "returns name of image representing the state"
@@ -23,7 +28,7 @@
     [:<>
      [:img {:src (image-src state)
             :style {:max-width "100%"}}]
-     [:button {:on-click #(reset! state :sad)}text]
+     [:button {:on-click #(toggle-state state)}text]
      [:p "Hunger levels 0/10"]]))
 
 
